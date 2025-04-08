@@ -3,6 +3,7 @@
 import { useState } from "react";
 import WeatherCard from "@/components/WeatherCard";
 import { RotateCcw } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   const [city, setCity] = useState("");
@@ -48,6 +49,7 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-sky-200 to-blue-300  transition-colors">
       <h1 className="text-4xl font-bold mb-6 text-gray-800 dark:text-gray-900">Weather Dashboard</h1>
+      
 
       <div className="flex gap-2 mb-4 w-full max-w-md">
         <input
@@ -79,7 +81,7 @@ export default function Home() {
             icon={weatherData.weather[0].icon}
           />
 
-          {/* 🔁 Refresh Button */}
+          
           <button
             onClick={handleRefresh}
             disabled={isRefreshing}

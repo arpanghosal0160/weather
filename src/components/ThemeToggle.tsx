@@ -1,22 +1,30 @@
 "use client";
-import { useTheme } from "@/app/context/ThemeProvider";
-import { Moon, Sun } from "lucide-react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    
+    if (isDarkMode) {
+      document.body.classList.add("dark");
+      document.body.classList.remove("light");
+    } else {
+      document.body.classList.add("light");
+      document.body.classList.remove("dark");
+    }
+  }, [isDarkMode]);
+
+  const toggleTheme = () => {
+    setIsDarkMode((prevMode) => !prevMode);
+  };
 
   return (
-    <motion.button
-      whileTap={{ scale: 0.9 }}
+    <button
       onClick={toggleTheme}
-      className="p-2 rounded-xl bg-white dark:bg-zinc-900 border border-gray-300 dark:border-zinc-700 shadow hover:shadow-lg transition-all"
+      className="px-4 py-2 rounded-md border bg-gray-200 dark:bg-gray-800 dark:text-white"
     >
-      {theme === "light" ? (
-        <Moon className="text-zinc-800 w-5 h-5" />
-      ) : (
-        <Sun className="text-yellow-300 w-5 h-5" />
-      )}
-    </motion.button>
+      {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+    </button>
   );
 }
