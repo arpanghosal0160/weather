@@ -46,8 +46,8 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-sky-200 to-blue-300 dark:from-zinc-900 dark:to-zinc-800 transition-colors">
-      <h1 className="text-4xl font-bold mb-6 text-gray-800 dark:text-gray-100">Weather Dashboard</h1>
+    <main className="min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-sky-200 to-blue-300  transition-colors">
+      <h1 className="text-4xl font-bold mb-6 text-gray-800 dark:text-gray-900">Weather Dashboard</h1>
 
       <div className="flex gap-2 mb-4 w-full max-w-md">
         <input
