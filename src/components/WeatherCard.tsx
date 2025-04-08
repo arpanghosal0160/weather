@@ -1,4 +1,4 @@
-// components/WeatherCard.tsx
+
 "use client";
 import { motion } from "framer-motion";
 
@@ -33,9 +33,9 @@ export default function WeatherCard({
         className="mx-auto"
       />
       <p className="capitalize text-lg">{condition}</p>
-      <p className="text-xl mt-2">🌡 {temp} °C</p>
-      <p>💧 Humidity: {humidity}%</p>
-      <p>🌬 Wind: {wind} km/h</p>
+      <p className="text-xl mt-2">{temp} °C</p>
+      <p>Humidity: {humidity}%</p>
+      <p>Wind: {wind} km/h</p>
     </motion.div>
   );
 }
